@@ -1,0 +1,45 @@
+/******************************************************************************
+
+INPUT=5
+
+OUTPUT:
+
+1 
+2 6
+3 7 10
+4 8 11 13
+5 9 12 14 15
+
+**********************************/
+#include <stdio.h>
+void
+printPattern (int n)
+{
+  int row, col, value;
+  int diff = n - 1;
+  for (row = 1; row <= n; row++, printf ("\n"))
+    {
+      value = row;
+      diff = n - 1;
+      for (col = 1; col <= row; col++)
+	{
+	  printf ("%d ", value);
+	  value += diff;
+	  diff--;
+
+	}
+    }
+}
+
+int
+main ()
+{
+  //printf("Hello World");
+  int n;
+  scanf ("%d", &n);
+  printPattern (n);
+
+  return 0;
+}
+
+
