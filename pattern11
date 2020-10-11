@@ -1,0 +1,44 @@
+/******************************************************************************
+
+input 5
+
+output
+
+*                 *
+* *             * *
+* * *         * * *
+* * * *     * * * *
+* * * * * * * * * * 
+* * * * * * * * * * 
+* * * *     * * * *
+* * *         * * * 
+* *             * *
+*                 * 
+
+*******************************************************************************/
+#include <stdio.h>
+
+int main()
+{
+    //printf("Hello World");
+    int n,row,col,space;
+    scanf("%d",&n);
+    for(row=1;row<=n;row++,printf("\n")){
+        for(col=1;col<=row;col++)
+        printf("*");
+        for(space=1;space<=(n-row)*2;space++)
+        printf(" ");
+        for(col=1;col<=row;col++)
+        printf("*");
+    }
+    for(row=n;row>=1;row--,printf("\n")){
+        for(col=1;col<=row;col++)
+        printf("*");
+        for(space=1;space<=(n-row)*2;space++)
+        printf(" ");
+        for(col=1;col<=row;col++)
+        printf("*");
+    }
+    return 0;
+}
+
