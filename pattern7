@@ -1,0 +1,46 @@
+/******************************************************************************
+
+INPUT= 4
+OUTPUT=
+1 2 3 4 17 18 19 20
+  5 6 7 14 15 16
+    8 9 12 13
+     10 11
+     
+**************************************/
+#include <stdio.h>
+void
+PrintPattern (int n)
+{
+  int value = 1, i, start = n * n + 1, diff = n;
+  int safe = start;
+  for (value = 1, i = 1; i <= n; i++, printf ("\n"))
+    {
+      for (int space = 1; space < i; space++)
+	{
+	  printf (" ");
+	}
+      for (int col = i; col <= n; col++)
+	{
+	  printf ("%d", value++);
+	}
+      for (int col = i; col <= n; col++)
+	{
+	  printf ("%d", start++);
+	}
+      diff--;
+      safe = safe - diff;
+      start = safe;
+    }				//printf("\n");
+}
+
+int
+main ()
+{
+  //printf("Hello World");
+  int n;
+  scanf ("%d", &n);
+  PrintPattern (n);
+  return 0;
+}
+
