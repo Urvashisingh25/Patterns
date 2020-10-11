@@ -1,0 +1,38 @@
+/******************************************************************************
+
+input=5
+
+output:
+
+A 
+ABA
+ABCBA
+ABCDCBA
+ABCDEDCBA
+
+*******************************************************************************/
+#include <stdio.h>
+void printPattern(int n){
+    int row,col;
+    char value;
+    for(int row=1;row<=n;row++,printf("\n")){
+        value='A';//or int value=65
+        for(int col=1;col<=row;col++){
+            printf("%c",value++);
+        }
+        value=value-1;
+        for(col=1;col<row;col++){
+            printf("%c",--value);
+        }
+    }
+}
+int main()
+{
+    //printf("Hello World");
+    int n;
+    scanf("%d",&n);
+    printPattern(n);
+    return 0;
+}
+
+
